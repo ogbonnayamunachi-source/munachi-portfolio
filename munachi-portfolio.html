@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Munachi Ogbonnaya | Software Engineering Student</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#eef7f1;--surface:#fff;--ink:#0d2b1d;--muted:#4a6355;--line:#cfe3d6;--c1:#15803d;--c2:#65a30d;--c3:#0d9488;--alert:#c2410c;--accent:#15803d;--band:#15803d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08150f;--surface:#0f2419;--ink:#e6f4ea;--muted:#9db8a8;--line:#1f3a2b;--c1:#4ade80;--c2:#a3e635;--c3:#2dd4bf;--alert:#fb923c;--accent:#4ade80;--band:#166534;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#08150f;--surface:#0f2419;--ink:#e6f4ea;--muted:#9db8a8;--line:#1f3a2b;--c1:#4ade80;--c2:#a3e635;--c3:#2dd4bf;--alert:#fb923c;--accent:#4ade80;--band:#166534;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 "Public Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.ticker{background:var(--band);color:#fff;overflow:hidden;white-space:nowrap;font-weight:600;font-size:.92rem;padding:.4rem 0;box-shadow:0 2px 12px rgba(21,128,61,.35)}
+.ticker span{display:inline-block;padding:0 .75rem;animation:ride 9s ease-in-out infinite alternate}
+@keyframes ride{from{transform:translateX(0)}to{transform:translateX(calc(100vw - 100%))}}
+@media (prefers-reduced-motion:reduce){.ticker span{animation:none}}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0;flex-wrap:wrap}
+nav .links{display:flex;gap:1.25rem;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--ink)}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:center;padding:3rem 0 4rem}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;letter-spacing:-.02em}
+.role{font-size:1.2rem;color:var(--muted);margin:.9rem 0 1.2rem}
+.lead{max-width:52ch;color:var(--ink)}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.viz{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem}
+.viz svg{width:100%;height:auto;display:block}
+.viz p{margin:.5rem .25rem 0;font-size:.85rem;color:var(--muted)}
+section{padding:3rem 0;border-top:1px solid var(--line)}
+section>h2,.wrap>h2{font-size:clamp(1.7rem,3.5vw,2.3rem);margin-bottom:1.5rem}
+.projects{display:grid;gap:1.25rem}
+.project{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--c1);border-radius:10px;padding:1.4rem}
+.project:nth-child(2){border-left-color:var(--c2)}
+.project:nth-child(3){border-left-color:var(--alert)}
+.project h3{font-size:1.35rem;margin-bottom:.3rem}
+.tag{display:inline-block;font-size:.85rem;color:var(--muted);margin-bottom:.6rem}
+.project ul{margin:.5rem 0 0;padding-left:1.1rem}
+.project li{margin:.25rem 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.cols h3{font-size:1.05rem;margin-bottom:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:0;padding:0;list-style:none}
+.chips li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.25rem .8rem;font-size:.92rem}
+.edu{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.4rem}
+.edu h3{font-size:1.3rem}
+.edu p{margin:.3rem 0 .8rem;color:var(--muted)}
+.contact dl{display:grid;grid-template-columns:max-content 1fr;gap:.6rem 1.5rem;margin:0}
+.contact dt{color:var(--muted)}
+.contact dd{margin:0;font-weight:500;overflow-wrap:anywhere}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:800px){.hero{grid-template-columns:1fr;padding-top:1.5rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pt{animation:none!important}}
+.pt{animation:pop .5s ease-out both}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+</style>
+</head>
+<body>
+<div class="ticker" aria-label="Munachi Ogbonnaya, Software Engineering Student"><span>Munachi Ogbonnaya, Software Engineering Student</span></div>
+<div class="wrap">
+<nav aria-label="Main">
+<span class="brand">Munachi Ogbonnaya</span>
+<div class="links"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero">
+<div>
+<h1>Munachi Ogbonnaya</h1>
+<p class="role">Software engineering student at Babcock University, graduating 2027</p>
+<p class="lead">I build user-friendly web applications and study how machine learning can spot unusual activity in network data. I learn fast, like solving problems, and enjoy working in teams.</p>
+<div class="cta">
+<a class="btn primary" href="#contact">Get in touch</a>
+<a class="btn" href="https://github.com/ogbonnayamunachi-source" target="_blank" rel="noopener noreferrer">View GitHub</a>
+</div>
+</div>
+<figure class="viz" style="margin:0">
+<svg id="plot" viewBox="0 0 400 300" role="img" aria-label="Scatter plot showing three clusters of normal network activity and five orange outliers flagged as unusual"></svg>
+<p>Illustration: clustering groups normal activity together and leaves unusual points (orange) standing apart. This is the idea behind my final-year project.</p>
+</figure>
+</header>
+</div>
+
+<div class="wrap">
+<section id="about" style="border-top:none;padding-top:0">
+<h2>About me</h2>
+<p class="lead">I'm a dedicated Software Engineering undergraduate with hands-on experience in software development, web technologies, database management and artificial intelligence. I enjoy building accessible, easy-to-use products, and I'm committed to continuous learning in technology and innovation.</p>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="projects">
+<article class="project">
+<h3>SkillBridge</h3>
+<span class="tag">Learning and career development platform</span>
+<ul>
+<li>Contributed to a platform that supports learning and career growth.</li>
+<li>Worked on frontend development and website functionality.</li>
+<li>Helped build an accessible, user-friendly experience.</li>
+</ul>
+</article>
+<article class="project">
+<h3>Portify</h3>
+<span class="tag">Portfolio building platform, built with Next.js</span>
+<ul>
+<li>Contributed to frontend development using Next.js.</li>
+<li>Designed user-friendly interfaces and improved the overall user experience.</li>
+<li>Assisted with developing portfolio creation features.</li>
+</ul>
+</article>
+<article class="project">
+<h3>Clustering-Based Cybersecurity Threat Detection</h3>
+<span class="tag">Final-year research project, in progress</span>
+<ul>
+<li>Exploring machine learning techniques to detect threats in network logs.</li>
+<li>Working with K-Means and DBSCAN clustering algorithms.</li>
+<li>Using Python for data analysis and visualization.</li>
+<li>Researching ways to identify unusual network activity and improve detection.</li>
+</ul>
+</article>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="cols">
+<div><h3>Languages</h3><ul class="chips"><li>Java</li><li>PHP</li><li>JavaScript</li><li>SQL</li></ul></div>
+<div><h3>Web development</h3><ul class="chips"><li>HTML5</li><li>CSS3</li><li>Next.js</li><li>Responsive design</li><li>Frontend</li></ul></div>
+<div><h3>Databases</h3><ul class="chips"><li>MySQL</li><li>Database design</li><li>SQL queries</li></ul></div>
+<div><h3>Tools</h3><ul class="chips"><li>VS Code</li><li>Git</li><li>GitHub</li></ul></div>
+<div><h3>Artificial intelligence</h3><ul class="chips"><li>AI fundamentals</li><li>Machine learning concepts</li><li>AI productivity tools</li></ul></div>
+<div><h3>Working style</h3><ul class="chips"><li>Communication</li><li>Problem-solving</li><li>Teamwork</li><li>Time management</li><li>Creativity</li><li>Adaptability</li><li>Attention to detail</li></ul></div>
+</div>
+</section>
+
+<section id="education">
+<h2>Education and certifications</h2>
+<div class="cols">
+<div class="edu">
+<h3>B.Sc. Software Engineering</h3>
+<p>Babcock University, Ilishan-Remo, Ogun State. Expected graduation: 2027.</p>
+<ul class="chips"><li>Software Development</li><li>Database Management</li><li>Object-Oriented Programming</li><li>Software Engineering Principles</li><li>Network Security</li><li>Artificial Intelligence</li><li>Software Project Management</li></ul>
+</div>
+<div class="edu">
+<h3>Certifications</h3>
+<p>Short courses in artificial intelligence.</p>
+<ul style="margin:0;padding-left:1.1rem"><li>Microsoft AI Fluency Training</li><li>HP LIFE: Introduction to Artificial Intelligence</li></ul>
+<h3 style="margin-top:1.2rem;font-size:1.05rem">Interests</h3>
+<p style="margin-bottom:0">Software engineering, artificial intelligence, web development, project management, technical writing and digital innovation.</p>
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<dl>
+<dt>Email</dt><dd><a href="mailto:ogbonnayamunachi@gmail.com">ogbonnayamunachi@gmail.com</a></dd>
+<dt>Phone</dt><dd><a href="tel:+2347069598530">07069598530</a></dd>
+<dt>GitHub</dt><dd><a href="https://github.com/ogbonnayamunachi-source" target="_blank" rel="noopener noreferrer">ogbonnayamunachi-source</a></dd>
+<dt>LinkedIn</dt><dd>Munachi AI Studio</dd>
+<dt>Location</dt><dd>Nigeria</dd>
+<dt>References</dt><dd>Available upon request</dd>
+</dl>
+</section>
+</div>
+
+<div class="wrap"><footer>© 2026 Munachi Ogbonnaya</footer></div>
+
+<script>
+(function(){
+var svg=document.getElementById("plot"),ns="http://www.w3.org/2000/svg",seed=7;
+function r(){seed=(seed*16807)%2147483647;return seed/2147483647}
+function g(){return (r()+r()+r()-1.5)*2}
+var groups=[{x:110,y:95,c:"var(--c1)"},{x:285,y:110,c:"var(--c2)"},{x:190,y:220,c:"var(--c3)"}];
+var i=0;
+function dot(x,y,c,rad,alert){var e=document.createElementNS(ns,"circle");e.setAttribute("cx",x);e.setAttribute("cy",y);e.setAttribute("r",rad);e.setAttribute("fill",alert?"none":c);e.setAttribute("fill-opacity",".8");if(alert){e.setAttribute("stroke",c);e.setAttribute("stroke-width","3")}
+e.setAttribute("class","pt");e.style.animationDelay=(i++*8)+"ms";e.style.transformOrigin=x+"px "+y+"px";svg.appendChild(e)}
+groups.forEach(function(k){for(var n=0;n<34;n++)dot(k.x+g()*34,k.y+g()*28,k.c,4.5,false)});
+[[35,255],[360,40],[350,255],[40,35],[215,40]].forEach(function(p){dot(p[0],p[1],"var(--alert)",7,true)});
+})();
+</script>
+</body>
+</html>
